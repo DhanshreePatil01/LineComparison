@@ -33,13 +33,17 @@ public class LineCompare {
 	String line1=String.valueOf(length1);
 	String line2=String.valueOf(length2);
 	
-	if(line1.equals(line2))
+	if(Double.compare(length1, length2) == 0)
 	{
-		System.out.println("Two Lines are equal");
-	}
-	else 
-	{
-		System.out.println("Two Lines are not equal");
-	}
+		System.out.println("Both Lines are equal");
+    }
+    else if (Double.compare(length1, length2) < 0)
+    {
+        System.out.println("line1 is less than line2");
+    }
+    else 
+    {
+        System.out.println("line1 is greater than line2");
+    }
   }
 }
