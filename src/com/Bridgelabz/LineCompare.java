@@ -4,7 +4,80 @@ import java.util.Scanner;
 
 public class LineCompare {
 
-	public static void main(String[] args) {
+	//Line Comparison Using Methods
+	int x1, x2, y1, y2, a1, a2, b1, b2;
+	double dis, dis1;
+
+	public void display()
+	{
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Welcome to Line Comparison Computation Program on Master Branch");
+		System.out.println("-----------------------------------------------------------------");
+	}
+	
+	public void firstLineLength(int x1,int x2,int y1,int y2)
+	{
+		dis = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+		System.out.println("distance between" + "(" + x1 + "," + y1 + ")," + "(" + x2 + "," + y2 + ")-->" + dis);
+		System.out.println();
+	}
+
+	public void secondLineLength(int a1,int a2,int b1, int b2) 
+	{
+		dis1 = Math.sqrt((a2 - a1) * (a2 - a1) + (b2 - b1) * (b2 - b1));
+		System.out.println("distance between" + "(" + a1 + "," + a2 + ")," + "(" + b1 + "," + b2 + ")-->" + dis1);
+	}
+
+	
+	public void isEqualLine()
+	{
+		String line_1=String.valueOf(dis);
+		String line_2=String.valueOf(dis1);
+		System.out.println();
+		if(line_1.equals(line_2))
+		{
+			System.out.println("both lines are equal");
+		}
+		else 
+		{
+			System.out.println("both lines are not equal");
+		}
+	}
+
+	
+	public void lineComparison()
+	{
+		System.out.println();
+		if (Double.compare(dis, dis1) == 0) 
+		{
+			System.out.println("Both Lines are equal");
+		} 
+		else if (Double.compare(dis, dis1) < 0)
+		{
+			System.out.println("line1 is less than line2");
+		} 
+		else 
+		{
+			System.out.println("line1 is greater than line2");
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		LineCompare obj=new LineCompare();
+		obj.display();
+		obj.firstLineLength(30, 20, 80, 10);
+		obj.secondLineLength(20,60,50,10);
+		obj.isEqualLine();
+		obj.lineComparison();
+		
+	}
+}
+
+    
+	/*//Line Comparison without Methods
+	 * 
+	 * public static void main(String[] args) {
 		
 	Scanner input=new Scanner(System.in);
 	
@@ -46,4 +119,4 @@ public class LineCompare {
         System.out.println("line1 is greater than line2");
     }
   }
-}
+}*/
